@@ -1,3 +1,6 @@
 [options]
-db_name = test
+db_name = false
+db_port = false
+db_user = openerp
+db_password = mc1234
 xmlrpc_port = 8070

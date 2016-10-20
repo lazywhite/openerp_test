@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Student Info',
+    'version': '1.0',
+    'category': 'Hidden',
+    'description': """Student Info CRUD""",
+    'author': 'John Doe (john@doe.com)',
+    'website': 'www.johndoe.com',
+    'license': 'AGPL-3',
+    'depends': ['web'],
+    'init_xml': [],
+    'update_xml': ['student_info_view.xml'],
+    'demo_xml': [],
+    'active': False,
+    'installable': True,
+    'js': ['static/js/*.js'],
+    'css': ['static/css/*.css'],
+#    'data': ['web_example.xml'],
+#    'qweb': ['static/xml/web_example.xml'],
+}

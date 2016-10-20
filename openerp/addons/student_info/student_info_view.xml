@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <!-- student search view -->
+        <record model="ir.ui.view" id="student_search">
+            <field name="name">student.search</field>
+            <field name="model">student.student</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Student Information Search">
+                    <group col="10" colspan="4">
+                        <separator orientation="vertical"/>
+                        <field name="name" string="Student Name"/>
+                        <field name="gender" string="Gender"/>
+                        <field name="age" string="Age"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- student tree view -->
+        <record id="student_student_tree" model="ir.ui.view">
+            <field name="name">student.result.tree</field>
+            <field name="model">student.student</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Student_result">
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="percent"/>
+                    <field name="gender"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="student_student_form" model="ir.ui.view">
+            <field name="name">student.result.form</field>
+            <field name="model">student.student</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Student Result">
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="percent"/>
+                    <field name="gender"/>
+                    <field name="active"/>
+                    <field name="notes"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- student action -->
+        <record id="action_student_student" model="ir.actions.act_window">
+            <field name="name">Student Information</field>
+            <field name="res_model">student.student</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- student menu -->
+        <menuitem id="student_parent" name="Student" />
+        <menuitem id="menu_student_parent" name="Student Management" parent="student_parent"/>
+        <menuitem action="action_student_student" id="menu_student_student" parent="menu_student_parent" string="Result"/>
+    </data>
+</openerp>
+

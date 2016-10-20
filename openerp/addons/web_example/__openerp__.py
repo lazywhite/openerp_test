@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Web example',
+    'version': '1.0',
+    'category': 'Hidden',
+    'description': """A module that does this and that""",
+    'author': 'John Doe (john@doe.com)',
+    'website': 'www.johndoe.com',
+    'license': 'AGPL-3',
+    'depends': ['web'],
+    'init_xml': [],
+    'update_xml': [],
+    'demo_xml': [],
+    'active': False,
+    'installable': True,
+    'js': ['static/js/*.js'],
+    'css': ['static/css/*.css'],
+    'data': ['web_example.xml'],
+    'qweb': ['static/xml/web_example.xml'],
+}
