@@ -1,0 +1,9 @@
+<openerp>
+    <data>
+        <!-- student menu -->
+        <menuitem id="student_parent" name="Student" />
+        <menuitem id="menu_student_parent" name="Student Management" parent="student_parent"/>
+        <menuitem action="action_student_student" id="menu_student_student" parent="menu_student_parent" string="student information"/>
+        <menuitem action="action_student_score" id="menu_student_score" parent="menu_student_parent" string="student score information"/>
+    </data>
+</openerp>

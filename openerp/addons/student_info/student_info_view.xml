@@ -31,6 +31,13 @@
                     <field name="percent"/>
                     <field name="gender"/>
                     <field name="active"/>
+                    <field name="scores">
+                        <tree string="scores">
+                            <filed name="student_id"/>
+                            <field name="term"/>
+                            <field name="score"/>
+                        </tree>
+                    </field>
                 </tree>
             </field>
         </record>
@@ -48,6 +55,29 @@
                     <field name="gender"/>
                     <field name="active"/>
                     <field name="notes"/>
+                    <group colspan="4">
+                            <field name="scores" nolabel="1">
+                                <tree name="score tree">
+                                    <field name="student_id"/>
+                                    <field name="term"/>
+                                    <field name="score"/>
+                                </tree>
+                            </field>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="student_student_score_tree" model="ir.ui.view">
+            <field name="name">student.score.tree</field>
+            <field name="model">student.score</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <form string="Student Score Result">
+                    <field name="student_id"/>
+                    <field name="term"/>
+                    <field name="score"/>
                 </form>
             </field>
         </record>
@@ -60,10 +90,13 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- student menu -->
-        <menuitem id="student_parent" name="Student" />
-        <menuitem id="menu_student_parent" name="Student Management" parent="student_parent"/>
-        <menuitem action="action_student_student" id="menu_student_student" parent="menu_student_parent" string="Result"/>
+        <record id="action_student_score" model="ir.actions.act_window">
+            <field name="name">Student score Information</field>
+            <field name="res_model">student.score</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
     </data>
 </openerp>
 

@@ -1,1 +1,2 @@
 import student_info
+import student_score

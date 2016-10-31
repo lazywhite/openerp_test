@@ -1,5 +1,5 @@
 [options]
-db_name = false
+db_name = oe
 db_port = false
 db_user = openerp
 db_password = mc1234
