@@ -55,6 +55,7 @@
                     <field name="gender"/>
                     <field name="active"/>
                     <field name="notes"/>
+                    <field name="state" invisible="1"/>
                     <group colspan="4">
                             <field name="scores" nolabel="1">
                                 <tree name="score tree">
@@ -63,6 +64,13 @@
                                     <field name="score"/>
                                 </tree>
                             </field>
+                    </group>
+                    <separator string="Workflow Actions" colspan="4"/>
+                    <group colspan="4" col="3">
+                        <button name="student_assigned" string="assign student" states="new" />
+                        <button name="student_negotiation" string="In Negotiation" states="assigned" />
+                        <button name="student_won" string="Won" states="negotiation" />
+                        <button name="student_lost" string="Lost" states="negotiation" />
                     </group>
 
                 </form>

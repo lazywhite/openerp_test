@@ -10,10 +10,36 @@ class student_student(osv.osv):
             'gender': fields.selection([('male', 'Male'), ('female', 'Female')], 'Gender'),
             'active': fields.boolean('Active'),
             'notes': fields.text('Details'),
-            'scores': fields.one2many('student.score', 'student_id', string=u"student scores")
+            'scores': fields.one2many('student.score', 'student_id', string=u"student scores"),
+            'state': fields.selection([
+                ('new', 'New'),
+                ('assigned', 'Assigned'),
+                ('negotiation', 'Negotiation'),
+                ('won', 'Won'),
+                ('lost', 'Lost')], 'Stage'),
+
             }
     _defaults = {
                 'name': 'Atul',
                 'active': True,
             }
-student_student()
+    def student_new(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state':'new'})
+        return True
+
+    def student_assigned(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state':'assigned'})
+        return True
+
+    def student_negotiation(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state':'negotiation'})
+        return True
+
+    def student_won(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state':'won'})
+        return True
+
+    def student_lost(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state':'lost'})
+        return True
+
